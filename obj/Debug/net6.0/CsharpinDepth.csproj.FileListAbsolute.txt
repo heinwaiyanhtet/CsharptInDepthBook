@@ -1,0 +1,15 @@
+/home/hein/Desktop/CsharpinDepth/bin/Debug/net6.0/CsharpinDepth
+/home/hein/Desktop/CsharpinDepth/bin/Debug/net6.0/CsharpinDepth.deps.json
+/home/hein/Desktop/CsharpinDepth/bin/Debug/net6.0/CsharpinDepth.runtimeconfig.json
+/home/hein/Desktop/CsharpinDepth/bin/Debug/net6.0/CsharpinDepth.dll
+/home/hein/Desktop/CsharpinDepth/bin/Debug/net6.0/ref/CsharpinDepth.dll
+/home/hein/Desktop/CsharpinDepth/bin/Debug/net6.0/CsharpinDepth.pdb
+/home/hein/Desktop/CsharpinDepth/obj/Debug/net6.0/CsharpinDepth.csproj.AssemblyReference.cache
+/home/hein/Desktop/CsharpinDepth/obj/Debug/net6.0/CsharpinDepth.GeneratedMSBuildEditorConfig.editorconfig
+/home/hein/Desktop/CsharpinDepth/obj/Debug/net6.0/CsharpinDepth.AssemblyInfoInputs.cache
+/home/hein/Desktop/CsharpinDepth/obj/Debug/net6.0/CsharpinDepth.AssemblyInfo.cs
+/home/hein/Desktop/CsharpinDepth/obj/Debug/net6.0/CsharpinDepth.csproj.CoreCompileInputs.cache
+/home/hein/Desktop/CsharpinDepth/obj/Debug/net6.0/CsharpinDepth.dll
+/home/hein/Desktop/CsharpinDepth/obj/Debug/net6.0/ref/CsharpinDepth.dll
+/home/hein/Desktop/CsharpinDepth/obj/Debug/net6.0/CsharpinDepth.pdb
+/home/hein/Desktop/CsharpinDepth/obj/Debug/net6.0/CsharpinDepth.genruntimeconfig.cache
