@@ -1,41 +1,123 @@
-﻿using System;
+﻿// nullable 
+//   public struct nullable<T> where T : struct
+//         {
+//             private readonly T value;
+//             private readonly bool hasValue;
 
-class GenericCounter<T>
-{
-    private int value; // Not static, to make it instance-specific
+//             public nullable (T value)
+//             {
+//                 this.value = value;
+//                 this.hasValue = true;
+//             }
 
-    public GenericCounter()
-    {
-        Console.WriteLine("Initializing counter for {0}", typeof(T));
-    }
+//             public bool HasValue { get { return hasValue; } }
 
-    public void Increment()
-    {
-        value++;
-    }
+//             public T Value{
+//                 get{
+//                     if(!hasValue)
+//                     {
+//                         throw new InvalidOperationException(); 
+//                     }
 
-    public void Display()
-    {
-        Console.WriteLine("Counter for {0}: {1}", typeof(T), value);
-    }
-}
+//                     return value;
+//                 }
+//             }
+//         }
 
 class GenericCounterDemo
 {
     static void Main()
     {
-        GenericCounter<string> stringCounter = new GenericCounter<string>();
+      
+    //   object o = x
+    // int? x = 5;
+    // Console.WriteLine(x.GetType());
 
-        stringCounter.Increment();
-        stringCounter.Increment();
-        stringCounter.Display();
 
-        GenericCounter<int> intCounter = new GenericCounter<int>();
 
-        intCounter.Increment();
-        intCounter.Display();
+        Nullable<int> noValue = new Nullable<int>();
+
+        object noValueBoxed = noValue;
+
+        Console.WriteLine(noValueBoxed ==null);
+
+
+        Nullable<int>someValue = new Nullable<int>(5);
+        object someValueBoxed = someValue;
+        Console.WriteLine(someValueBoxed.GetType());      
     }
 }
+
+
+
+
+
+
+
+
+
+
+
+
+// class GenericCounterDemo
+// {
+//     static void Main()
+//     {
+
+//         static void PrintType<T>()
+//         {
+//             Console.WriteLine("typeof(T) = {0}", typeof(T));
+
+//             Console.WriteLine("typeof(List<T>) = {0}",
+//             typeof(List<T>));
+//         }
+
+//         PrintType<string>();
+
+//         PrintType<int>();
+
+//     }
+// }
+
+
+// using System;
+
+// class GenericCounter<T>
+// {
+//     private int value; // Not static, to make it instance-specific
+
+//     public GenericCounter()
+//     {
+//         Console.WriteLine("Initializing counter for {0}", typeof(T));
+//     }
+
+//     public void Increment()
+//     {
+//         value++;
+//     }
+
+//     public void Display()
+//     {
+//         Console.WriteLine("Counter for {0}: {1}", typeof(T), value);
+//     }
+// }
+
+// class GenericCounterDemo
+// {
+//     static void Main()
+//     {
+//         GenericCounter<string> stringCounter = new GenericCounter<string>();
+
+//         stringCounter.Increment();
+//         stringCounter.Increment();
+//         stringCounter.Display();
+
+//         GenericCounter<int> intCounter = new GenericCounter<int>();
+
+//         intCounter.Increment();
+//         intCounter.Display();
+//     }
+// }
 
 // anonymous type
 
