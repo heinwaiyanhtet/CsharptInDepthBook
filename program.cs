@@ -1,22 +1,28 @@
-partial class Program{
-
-    static partial void PartialMethod();
-
-}
-
-
-partial class Program{
-    static partial void PartialMethod()
+partial class PartialMethodDemo
+{
+    public PartialMethodDemo()
     {
-        Console.WriteLine("hello");
+        OnConstruction();
+    }
+
+    public override string ToString()
+    {
+       string ret = "Original return value";
+       CustomizeToString(ref ret); 
+
+       return ret;
+    }
+
+    partial void OnConstruction();
+    partial void CustomizeToString(ref string text);
+}
+
+partial class PartialMethodDemo
+{
+    partial void CustomizeToString(ref string text)
+    {
+        text += " - customized!";
     }
 }
 
-partial class Program{
-    static void Main(){
 
-        Console.WriteLine("Hello from part 1");
-        PartialMethod();
-
-    }
-}
