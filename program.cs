@@ -1,36 +1,29 @@
-using System;
-using System.Collections.Generic;
+using System.Dynamic;
 
 class Program
 {
-    private class LambdaContext
-    {
-        public string text;
+    static void Main(){
 
-        public void Method(){
-            Console.WriteLine(text);
-        }
-    }
+        dynamic expando = new ExpandoObject();
+        expando.someData = "Some data";
 
+        Action<string> action = input 
+            =>
+        Console.WriteLine("here is input '{0}'",input); 
 
-    static void Main()
-    {
-        List<Action> actions = new List<Action>();
+        expando.FakeMethod = action;
 
-        for (int i = 0; i < 5; i++)
-        {
-            LambdaContext context = new LambdaContext();
-            
-            context.text = String.Format("Message {0}",i);
-            
-            actions.Add(context.Method);
-        }
+        Console.WriteLine(expando.someData);
+
+        expando.FakeMethod("hello");
+    
+        IDictionary<string,object> dictionary = expando;
+
+        Console.WriteLine("keys: {0}",string.Join(",",dictionary.Keys));
+
+        dictionary["otherData"] = "other";
         
-        foreach (var action in actions)
-        {   
-            action();
-        }
+        Console.WriteLine(expando.otherData);
+
     }
-
 }
-
