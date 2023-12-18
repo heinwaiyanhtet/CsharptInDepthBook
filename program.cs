@@ -1,28 +1,36 @@
-partial class PartialMethodDemo
+using System;
+using System.Collections.Generic;
+
+class Program
 {
-    public PartialMethodDemo()
+    private class LambdaContext
     {
-        OnConstruction();
+        public string text;
+
+        public void Method(){
+            Console.WriteLine(text);
+        }
     }
 
-    public override string ToString()
-    {
-       string ret = "Original return value";
-       CustomizeToString(ref ret); 
 
-       return ret;
+    static void Main()
+    {
+        List<Action> actions = new List<Action>();
+
+        for (int i = 0; i < 5; i++)
+        {
+            LambdaContext context = new LambdaContext();
+            
+            context.text = String.Format("Message {0}",i);
+            
+            actions.Add(context.Method);
+        }
+        
+        foreach (var action in actions)
+        {   
+            action();
+        }
     }
 
-    partial void OnConstruction();
-    partial void CustomizeToString(ref string text);
 }
-
-partial class PartialMethodDemo
-{
-    partial void CustomizeToString(ref string text)
-    {
-        text += " - customized!";
-    }
-}
-
 
