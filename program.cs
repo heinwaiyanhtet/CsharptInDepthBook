@@ -1,15 +1,45 @@
-class program
+public sealed class ByteStream : IDisposable
 {
-    static void PrintName(dynamic obj)
-{
-Console.WriteLine(obj.Name);
-}
+    private readonly Stream stream;
+    private readonly byte[] buffer;
+    private int position;
 
-static void Main()
-{
-    var x = new { Name = "Abc" };
-    var y = new { Name = "Def", Score = 10 };
-    PrintName(x);
-    PrintName(y);
-} 
+
+    private int bufferedBytes;
+
+    public ByteStream(Stream  stream)
+    {
+        this.stream = stream;
+        buffer = new byte[1024 * 8];
+    }
+
+
+    public  async ValueTask<byte?> ReadByteAsync()
+    {
+        if(position == bufferedBytes)
+        
+        {
+            position = 0;
+
+            bufferedBytes = await 
+                    stream.ReadAsync(buffer,0,buffer.Length)
+                        .ConfigureAwait(false);
+
+            if(bufferedBytes == 0)
+            {
+                return null;
+            }
+        }
+        return buffer[position++];
+    }
+
+    public void Dispose()
+    {
+        stream.Dispose();
+    }
+
+
+
+
+
 }
